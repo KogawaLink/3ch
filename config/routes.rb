@@ -5,4 +5,7 @@ Rails.application.routes.draw do
   get 'tops/thread'
   
   get 'tops/newthread'
+  
+  get 'concerns/search'
+  root 'concerns#search'
 end
