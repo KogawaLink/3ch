@@ -1,3 +1,6 @@
+.title {
+  font-size: 30px
+}
 .logo {
   width: 300px;
   height: 300px;
@@ -7,4 +10,54 @@
 .kensaku {
   text-align: center;
   margin: 50px 0 0 0;
+}
+
+.btn-cross {
+  display: inline-block;
+  position: relative;
+  padding: 0.25em 1em;
+  border-top: solid 2px black;
+  border-bottom: solid 2px black;
+  text-decoration: none;
+  font-weight: bold;
+  color: #03A9F4;
+}
+.btn-cross:before, .btn-cross:after {
+  content: '';
+  position: absolute;
+  top: -7px;
+  width: 2px;
+  height: -webkit-calc(100% + 14px);
+  height: calc(100% + 14px);
+  background-color: black;
+  transition: .3s;
+}
+.btn-cross:before {
+  left: 7px;
+}
+.btn-cross:after {
+  right: 7px;
+}
+.btn-cross:hover:before {
+  top: 0px;
+  left:0;
+  height: 100%;
+}
+.btn-cross:hover:after {
+  top: 0px;
+  right: 0;
+  height: 100%;
+}
+
+.titletext {
+  width: 600px;
+  height: 100px;
+  font-size: 20px;
+}
+.gaiyou {
+  font-size: 30px;
+}
+.overview {
+  width: 600px;
+  height: 350px;
 }

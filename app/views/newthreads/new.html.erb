@@ -3,5 +3,10 @@
   スレッドタイトル
 </div>
 <%= form_with model: @newthread do |f| %>
-  <%= f.text_field :search ,:size=>"60x10" %>
+  <%= f.text_field :title , class:'titletext' %>
+<% end %>
+<div class="gaiyou">スレッドの説明や概要</div>
+<div class="hosoku">※こちらに書かれたものがスレッドの１コメになります。</div>
+<%= form_with model: @newthread do |f| %>
+  <%= f.text_field :overview , class:'overview' %>
 <% end %>
