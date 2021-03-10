@@ -1,13 +1,14 @@
 <div style="text-align: center">
-  <%= image_tag 'weblogo.jpg', class: 'logo', alt: '３ちゃんねる' %>
+  <%= link_to tops_index_path do %>
+    <%= image_tag 'weblogo.jpg', class: 'logo', alt: '３ちゃんねる' %>
+  <% end %>
 </div>
-  <div style="text-align: center">
+  <div class="kensaku">
     <%= form_with url: tops_index_path do |f| %>
       <%= f.text_field :search ,:size=>"80" ,:placeholder=>"スレタイ検索"%>
       <%= f.submit :'検索' %>
     <% end %>
   </div>
-  <%= form_with url: newthreads_new_path do |f| %>
-    <%= f.submit :'新規スレッド作成' %>
-  <% end %>
-<p>Find me in app/views/tops/index.html.erb</p>
+<%= link_to newthreads_new_path %>
+  <%= f.submit :'新規スレッド作成' %>
+<% end %>
