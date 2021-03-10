@@ -1,0 +1,2 @@
+class Newthread < ApplicationRecord
+end

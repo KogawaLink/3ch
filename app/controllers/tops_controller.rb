@@ -2,7 +2,7 @@ class TopsController < ApplicationController
   def index
   end
   
-  def thread1
+  def post
   end
   
   def newthread

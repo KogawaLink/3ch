@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
-  def index
-    binding.pry
+  before_action :search
+  def search
     @searchs = Post.search(params[:search])
   end
 end
