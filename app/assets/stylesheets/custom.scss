@@ -1,5 +1,16 @@
+h1 {
+  text-align: center;
+  font-size: 50px;
+  margin: 40px 0 0 0;
+}
 .title {
-  font-size: 30px
+  font-size: 30px;
+  margin-top: 30px;
+}
+.left {
+  display: block;
+  margin: 0 0 0 10%;
+  float: left;
 }
 .logo {
   width: 300px;
@@ -56,8 +67,17 @@
 }
 .gaiyou {
   font-size: 30px;
+  margin-top: 30px;
 }
 .overview {
   width: 600px;
   height: 350px;
+}
+
+.right {
+  margin-left: 920px;
+}
+.pw {
+  font-size: 30px;
+  margin-top: 300px;
 }
