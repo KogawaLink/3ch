@@ -11,6 +11,7 @@ class NewthreadsController < ApplicationController
   end
   
   def new
+    @newthread = Newthread.new
   end
   
 end

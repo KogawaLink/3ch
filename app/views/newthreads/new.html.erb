@@ -3,7 +3,7 @@
   <div class="title">
     スレッドタイトル
   </div>
-  <%= form_with model: @newthread ,method: :post do |f| %>
+  <%= form_with model: @newthread ,method: :posts do |f| %>
     <%= f.text_area :title , class:'titletext' %>
     <div class="gaiyou">スレッドの説明や概要</div>
     <%= f.text_area :overview , class:'overview' %>
@@ -12,11 +12,11 @@
 </div>
 <div class="right">
   <div class="name">作成者名</div>
-  <%= form_with model: @newthread ,method: :post do |f| %>
+  <%= form_with model: @newthread ,method: :posts do |f| %>
     <%= f.text_field :name , class:'sakuseisya' %>
   <% end %>
   <div class="pw">スレッドのパスワードを入力してください</div>
-  <%= form_with model: @newthread ,method: :post do |f| %>
+  <%= form_with model: @newthread ,method: :posts do |f| %>
     <%= f.text_field :pw , class:'password' %>
   <% end %>
   <div class="tuiki">※ここに書かれたものがスレッド削除する際に必要になるので控えておくことをオススメします。
@@ -29,6 +29,6 @@
     <%= image_tag 'webkoukoku.gif', class: 'abc', alt: '広告' %>
   </div>
   <div class="inline">
-    <%= button_to "作成する", {controller: 'newthreads', action: 'create'},{method: :post, class:"sakusei"} %>
+    <%= button_to "作成する", {controller: 'newthreads', action: 'create'},{method: :posts, class:"sakusei"} %>
   </div>
 </div>
