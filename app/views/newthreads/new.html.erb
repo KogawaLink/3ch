@@ -1,34 +1,30 @@
-<h1>新規スレッド作成</h1>
-<div class="left">
-  <div class="title">
-    スレッドタイトル
+<%= form_with(model: @newthread, url: newthreads_path) do |f| %>
+  <h1>新規スレッド作成</h1>
+  <div class="left">
+    <div class="title">
+      スレッドタイトル
+    </div>
+      <%= f.text_area :title , class:'titletext' %>
+      <div class="gaiyou">スレッドの説明や概要</div>
+      <%= f.text_area :overview , class:'overviews' %>
+     <div class="hosoku">※こちらに書かれたものがスレッドの１コメになります。</div>
   </div>
-  <%= form_with model: @newthread ,method: :posts do |f| %>
-    <%= f.text_area :title , class:'titletext' %>
-    <div class="gaiyou">スレッドの説明や概要</div>
-    <%= f.text_area :overview , class:'overview' %>
-   <div class="hosoku">※こちらに書かれたものがスレッドの１コメになります。</div>
-  <% end %>
-</div>
-<div class="right">
-  <div class="name">作成者名</div>
-  <%= form_with model: @newthread ,method: :posts do |f| %>
-    <%= f.text_field :name , class:'sakuseisya' %>
-  <% end %>
-  <div class="pw">スレッドのパスワードを入力してください</div>
-  <%= form_with model: @newthread ,method: :posts do |f| %>
-    <%= f.text_field :pw , class:'password' %>
-  <% end %>
-  <div class="tuiki">※ここに書かれたものがスレッド削除する際に必要になるので控えておくことをオススメします。
-    <p>※空欄でも構いませんがその場合他者から簡単に削除される場合があります。</p>
+  <div class="right">
+    <div class="name">作成者名</div>
+      <%= f.text_field :name , class:'sakuseisya' %>
+    <div class="pw">スレッドのパスワードを入力してください</div>
+      <%= f.text_field :pw , class:'password' %>
+    <div class="tuiki">※ここに書かれたものがスレッド削除する際に必要になるので控えておくことをオススメします。
+      <p>※空欄でも構いませんがその場合他者から簡単に削除される場合があります。</p>
+    </div>
+    <div class="inline">
+      <%= image_tag 'webkoukoku.gif', class: 'abc', alt: '広告' %>
+    </div>
+    <div class="inline">
+      <%= image_tag 'webkoukoku.gif', class: 'abc', alt: '広告' %>
+    </div>
+    <div class="inline">
+      <%= f.submit "作成する" , class:'sakusei' %>
+    </div>
   </div>
-  <div class="inline">
-    <%= image_tag 'webkoukoku.gif', class: 'abc', alt: '広告' %>
-  </div>
-  <div class="inline">
-    <%= image_tag 'webkoukoku.gif', class: 'abc', alt: '広告' %>
-  </div>
-  <div class="inline">
-    <%= button_to "作成する", {controller: 'newthreads', action: 'create'},{method: :posts, class:"sakusei"} %>
-  </div>
-</div>
+<% end %>

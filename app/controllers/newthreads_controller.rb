@@ -4,14 +4,13 @@ class NewthreadsController < ApplicationController
   end
   
   def create
-    Newthread.create
-    @newthread = Newthread.new(params.newthread)
+    @newthread = Newthread.new(newthread_params)
     @newthread.save
-    redirect_to "/posts"
+    redirect_to tops_posts_path
   end
   
-  def new
-    @newthread = Newthread.new
+  private
+  def newthread_params
+    params.permit(:title, :overview, :name, :pw)
   end
-  
 end
