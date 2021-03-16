@@ -2,7 +2,7 @@ class CreateNewthreads < ActiveRecord::Migration[5.2]
   def change
     create_table :newthreads do |t|
       t.string :title
-      t.string :overview
+      t.string :over_view
       t.string :name
       t.string :pw
 

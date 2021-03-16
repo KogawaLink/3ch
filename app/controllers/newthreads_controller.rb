@@ -11,6 +11,6 @@ class NewthreadsController < ApplicationController
   
   private
   def newthread_params
-    params.permit(:title, :overview, :name, :pw)
+    params.permit(:title, :over_view, :name, :pw)
   end
 end

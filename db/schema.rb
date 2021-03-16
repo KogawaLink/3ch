@@ -14,7 +14,9 @@ ActiveRecord::Schema.define(version: 2021_03_10_060137) do
 
   create_table "newthreads", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title"
-    t.string "password"
+    t.string "over_view"
+    t.string "name"
+    t.string "pw"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
