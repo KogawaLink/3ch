@@ -2,7 +2,8 @@ class TopsController < ApplicationController
   def index
   end
   
-  def post
+  def posts
+    @newthread = Newthread.find(params[:id])
   end
   
   def newthread
