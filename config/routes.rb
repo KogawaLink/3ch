@@ -10,4 +10,5 @@ Rails.application.routes.draw do
   
   get 'concerns/search'
   resources 'newthreads'
+  
 end

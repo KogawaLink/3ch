@@ -1,5 +1,12 @@
+@font-face {
+  font-family: 'crayon_1-1';
+  src: font-url('crayon_1-1.ttf')
+}
+
+
 h1 {
   text-align: center;
+  font-family: 'crayon_1-1';
   font-size: 50px;
   margin: 40px 0 0 0;
 }

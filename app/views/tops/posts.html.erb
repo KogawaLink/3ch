@@ -1,1 +1,5 @@
-<h1>タイトル</h1>
+<% @newthreads.each do |newthread| %>
+  <h1>
+    <%= newthread.title %>
+  </h1>
+<% end %>
