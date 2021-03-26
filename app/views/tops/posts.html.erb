@@ -1,3 +1,15 @@
   <h1>
     <%= @newthread.title %>
   </h1>
+  
+  <div class="kakomi-te1">
+    <div class="toukousya">
+      <%= @newthread.name %>
+    </div>
+    <div class="comment">
+      <%= @newthread.over_view %>
+    </div>
+    <%= form_with url: thread_comments_index_path do |f| %>
+      <%= f.text_field :comment%>
+    <% end %>
+  </div>

@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   post 'tops/index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root 'tops#index'
-  get 'tops/:id/posts', to: 'tops#posts', as: 'posts'
+  get 'posts/:id/posts', to: 'tops#posts', as: 'posts/posts'
   
   get 'tops/newthread'
   

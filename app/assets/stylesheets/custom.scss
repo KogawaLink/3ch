@@ -115,3 +115,23 @@ h1 {
 .inline:last-child {
   margin: 0 0 0 100px;
 }
+
+.kakomi-te1 {
+ margin: 2em auto; 
+ padding: 1em 1.5em;
+ width: 90%; /*幅の調節*/
+ color: #777777; /* 文字色 */
+ background-color: #fff; /* 背景色 */
+ border: 4px solid #f6bfbc; /*線の太さ・色*/
+ border-radius: 3em .8em 3em .7em/.9em 2em .8em 3em;
+}
+
+.boarder {
+height:30px;
+margin:0px 0px 5px 0px;
+padding:5px 0px 0px 0px;
+font-size:16px;
+font-weight:bold;color:#333333;
+background-image:url(img/head011_01.png);
+background-position:bottom;background-repeat:repeat-x;
+}
