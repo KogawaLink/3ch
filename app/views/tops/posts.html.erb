@@ -9,7 +9,7 @@
     <div class="comment">
       <%= @newthread.over_view %>
     </div>
-    <%= form_with url: thread_comments_index_path do |f| %>
+  </div>
+    <%= form_with model: @post do |f| %>
       <%= f.text_field :comment%>
     <% end %>
-  </div>
