@@ -1,0 +1,24 @@
+  <h1>
+    <%= @newthread.title %>
+  </h1>
+  
+  <div class="kakomi-te1">
+    <div class="toukousya">
+      <%= @newthread.name %>
+    </div>
+    <div class="comment">
+      <%= @newthread.over_view %>
+    </div>
+  </div>
+  <%= form_with model: @post do |f| %>
+      <div class="commentss">
+        <%= f.text_field :names , :size=>"40" , :placeholder=>"投稿者" , class:'names' %>
+      </div>
+      <p></p>
+      <div class="commentss">
+        <%= f.text_area :comment　, :placeholder=>"コメント" , class:'comments' %>
+      </div>
+      <div class="sousin-btn">
+        <%= f.submit "送信" , class:'sousin' %>
+      </div>
+  <% end %>

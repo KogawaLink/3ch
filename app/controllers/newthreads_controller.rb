@@ -11,7 +11,7 @@ class NewthreadsController < ApplicationController
   def create
     @newthread = Newthread.new(newthread_params)
     if @newthread.save
-     redirect_to posts_posts_path(@newthread), success:"セーブ完了"
+     redirect_to posts_path(@newthread), success:"セーブ完了"
     else
      flash.now[:danger] = "失敗"
      render :new
