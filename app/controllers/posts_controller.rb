@@ -1,15 +1,16 @@
 class PostsController < ApplicationController
  
  def index
+  @newthread = Newthread.find(params[:id])
+  @post = @newthread.posts.new
  end
  
  def create
-  @newthread = Newthread.find(params[:id])
-  @post = Post.new(params_post)
-  @post.newthread = @post
+  @newthread = Newthread.find(params[:newthread_id])
+  @post = @newthread.posts.new(post_params)
   
-  if @comment.save
-   redirect_to posts_path(@post)
+  if @post.save
+   redirect_to posts_path(@newthread)
   else
    render "newthreads/new"
   end
@@ -18,6 +19,6 @@ class PostsController < ApplicationController
  private
 
  def post_params
-  params.require(:post).permit(:names, :comment)
+  params.require(:post).permit(:postname, :comment)
  end
 end

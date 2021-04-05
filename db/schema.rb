@@ -22,7 +22,9 @@ ActiveRecord::Schema.define(version: 2021_03_10_060137) do
   end
 
   create_table "posts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "title"
+    t.string "postname"
+    t.string "comment"
+    t.integer "newthread_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
