@@ -9,6 +9,9 @@ Rails.application.routes.draw do
   get 'tops/newthread'
   
   get 'concerns/search'
-  resources 'newthreads'
+  resources :newthreads do
+    resources :posts, only: [:create]
+  end
+  
   
 end

@@ -1,4 +1,5 @@
 class Post < ApplicationRecord
+ belongs_to :newthread
  def new
   @post = Post.new
  end
@@ -8,4 +9,7 @@ class Post < ApplicationRecord
   @post.save
   redirect_to posts_path(@post)
  end
+ 
+ validates :names, presence: true
+ validates :comments, presence: true
 end
