@@ -9,6 +9,10 @@
     <div class="comment">
       <%= @newthread.over_view %>
     </div>
+    <% @newthread.posts.each do |post| %>
+      <%= post.postname %>
+      <%= post.comment %>
+    <% end %>
   </div>
   <%= form_with(model: @post, url: newthread_posts_path(@newthread.id)) do |f| %>
       <div class="commentss">
