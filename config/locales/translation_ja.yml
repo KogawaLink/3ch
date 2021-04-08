@@ -1,0 +1,19 @@
+ja:
+  activerecord:
+    models:
+      newthread: 新しいスレッド  #g
+      post: 役職  #g
+      search: 探す  #g
+
+    attributes:
+      newthread:
+        name: 名前  #g
+        over_view: 概要  #g
+        posts: 投稿  #g
+        pw: Pw  #g
+        title: 題名  #g
+
+      post:
+        comment: コメント  #g
+        newthread: :activerecord.models.newthread  #g
+        postname: 郵便名  #g
