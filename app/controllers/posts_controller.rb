@@ -3,7 +3,7 @@ class PostsController < ApplicationController
  def index
   @newthread = Newthread.includes(:posts).find(params[:id])
   @post = @newthread.posts.new
-  @time = Date.current.strftime('%Y年 %m月 %d日')
+  @time = Time.now.strftime('%Y年 %m月 %d日 %H:%M:%S')
  end
  
  def create
