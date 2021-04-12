@@ -10,6 +10,6 @@
     <% end %>
   </div>
 <%= link_to '新規スレッド作成', new_newthread_path , class: 'btn-cross' %>
-<%= @thread.each.with_index(1) do |posts, i| %>
-  <%= link_to posts_path(posts.id), class: "titles" %>
+<%= @thread.each.with_index(1) do |newthreas, i| %>
+  <%= link_to newthreads_path(newthreas.id), class: "titles" %>
 <% end %>
