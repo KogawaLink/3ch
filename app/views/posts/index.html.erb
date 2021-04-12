@@ -4,14 +4,14 @@
   
   <div class="kakomi-te1">
     <div class="toukousya">
-      <%= @newthread.name %>  <%= timedate(@newthread[:created_at]) %>
+      1  <%= @newthread.name %>  <%= timedate(@newthread[:created_at]) %>
     </div>
     <div class="comment">
       <%= @newthread.over_view %>
     </div>
       <div class="comment">
     <% @newthread.posts.each_with_index do |post, index| %>
-      <%= index + 1 %>
+      <%= index + 2 %>
         <%= post.postname %>
         <%= timedate(post[:created_at]) %><br>
         <%= post.comment %>
