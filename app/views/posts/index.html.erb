@@ -8,12 +8,14 @@
   <div class="comment">
     <%= @newthread.over_view %>
   </div>
-  <% @newthread.posts.each_with_index do |post, index| %>
+  <% @newthread.posts.each.with_index(2) do |post, index| %>
     <div class="comment">
-      <%= index + 2 %>
-      <%= post.postname %>
-      <%= timedate(post[:created_at]) %><br>
-      <%= post.comment %>
+      <%  if post.id.present? %>
+        <%= index %>
+        <%= post.postname %>
+        <%= timedate(post[:created_at]) %><br>
+        <%= post.comment %>
+      <% end %>
     </div>
   <% end %>
 </div>
