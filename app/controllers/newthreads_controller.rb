@@ -21,6 +21,7 @@ class NewthreadsController < ApplicationController
   def delete
     @newthread = Newthread.find(params[:newthread_id])
   end
+  
   def destroy
     @thread = Newthread.find(params[:newthread_id])
     if thread.authenticate(params[:pw])
