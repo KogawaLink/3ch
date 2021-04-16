@@ -154,3 +154,10 @@ background-repeat:repeat-x;
 .sousin-btn {
   display: inline-block;
 }
+
+.alert {
+  margin-bottom: 0px;
+  position: fixed;
+  width: 100%;
+  z-index: 10000;
+}

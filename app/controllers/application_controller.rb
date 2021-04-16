@@ -3,5 +3,9 @@ class ApplicationController < ActionController::Base
   def search
     @searchs = Search.search(params[:search])
   end
+  
+  protect_from_forgery with: :exception
+  
+  add_flash_types :success, :info, :warning, :danger
  
 end
