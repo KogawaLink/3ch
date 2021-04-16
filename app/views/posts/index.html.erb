@@ -14,7 +14,7 @@
         <%= index %>
         <%= post.postname %>
         <%= timedate(post[:created_at]) %><br>
-        <%= post.comment %>
+        <%= simple_format(post.comment) %>
       <% end %>
     </div>
   <% end %>
@@ -32,3 +32,6 @@
     </div>
 <% end %>
 <%= flash[:notice] %>
+<%= link_to newthreads_delete_path do %>
+  <div class="delete-btn">スレッドを削除</div>
+<% end %>

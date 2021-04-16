@@ -18,6 +18,21 @@ class NewthreadsController < ApplicationController
     end
   end
   
+  def delete
+    @newthread = Newthread.find(params[:newthread_id])
+  end
+  def destroy
+    @thread = Newthread.find(params[:newthread_id])
+    if thread.authenticate(params[:pw])
+      thread.destroy
+      redirect_to root_path, success: '削除しました。'
+    else
+      flash.now[:danger] = 'パスワードが違います'
+      render :new
+    end
+  end
+  
+  
   private
   def newthread_params
     params.require(:newthread).permit(:title, :over_view, :name, :pw)
