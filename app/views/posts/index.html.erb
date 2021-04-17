@@ -32,7 +32,4 @@
     </div>
 <% end %>
 <%= flash[:notice] %>
-<%= form_with @thread, url: {controller: 'newthreads' , action: 'delete' } do |f| %>
-  <%= f.submit %>
-    <div class="delete-btn">スレッドを削除</div>
-<% end %>
+  <div class="delete-btn">スレッドを削除</div>
