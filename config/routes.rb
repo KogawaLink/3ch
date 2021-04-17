@@ -8,8 +8,7 @@ Rails.application.routes.draw do
 
   get 'tops/newthread'
   
-  get 'newthread/:id/deletes', to: 'newthreads#delete', as: 'deletes'
-  delete '/newthreads/:id' => 'newthreads#destroy'
+  resources :newthreads
   
   get 'concerns/search'
   resources :newthreads do

@@ -19,7 +19,8 @@ class NewthreadsController < ApplicationController
   end
   
   def delete
-    @newthread = Newthread.find(params[:newthread_id])
+    @thread = Newthread.find(params[:newthread_id,:title,:pw])
+    redirect_to deletes_path(@thread)
   end
   
   def destroy

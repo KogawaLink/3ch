@@ -32,6 +32,7 @@
     </div>
 <% end %>
 <%= flash[:notice] %>
-<%= link_to newthreads_delete_path do %>
-  <div class="delete-btn">スレッドを削除</div>
+<%= form_with @thread, url: {controller: 'newthreads' , action: 'delete' } do |f| %>
+  <%= f.submit %>
+    <div class="delete-btn">スレッドを削除</div>
 <% end %>
