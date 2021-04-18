@@ -32,4 +32,4 @@
     </div>
 <% end %>
 <%= flash[:notice] %>
-  <div class="delete-btn">スレッドを削除</div>
+<%= link_to 'スレッドを削除' , {controller: 'newthreads', action: 'delete'} , class: :delete_btn %>

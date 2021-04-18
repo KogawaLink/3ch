@@ -161,3 +161,25 @@ background-repeat:repeat-x;
   width: 100%;
   z-index: 10000;
 }
+
+
+.delete_btn {
+  display: inline-block;
+  padding: 16px 32px;
+  background: #e41313;
+  border-bottom: solid 4px #bd1111;
+  border-radius: 8px;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+  line-heigt: 1.2em;
+  -webkit-transition: .100s;
+  transition: .100s;
+  float: right;
+}
+.delete_btn:hover {
+  border-bottom: none;
+  -webkit-transform: translateY(4px);
+  transform: translateY(4px);
+}
