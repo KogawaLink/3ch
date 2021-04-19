@@ -24,13 +24,12 @@ class NewthreadsController < ApplicationController
   end
   
   def destroy
-    @thread = Newthread.find(params[:newthread_id])
-    if thread.authenticate(params[:pw])
-      thread.destroy
+    if @thread && Newthread.find(params[:pw])
+      @thread.destroy
       redirect_to root_path, success: '削除しました。'
     else
       flash.now[:danger] = 'パスワードが違います'
-      render :new
+      render :delete
     end
   end
   

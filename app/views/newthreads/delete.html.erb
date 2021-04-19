@@ -2,3 +2,7 @@
 <div class="title">
   <%= @thread.title %>
 </div>
+<%= form_with model: @newthread do |f| %>
+  <%= f.text_field :pw , class:'password' %>
+  <%= f.submit "送信" , class:'sousin' %>
+<% end %>
