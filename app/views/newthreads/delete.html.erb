@@ -3,6 +3,6 @@
   <%= @thread.title %>
 </div>
 <%= form_with(model: @thread, method: :delete) do |f| %>
-  <%= f.text_field :pw , class:'password' %>
+  <%= f.text_field :again_password , class:'password' %>
   <%= f.submit "送信" , class:'sousin' %>
 <% end %>
