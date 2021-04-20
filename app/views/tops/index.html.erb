@@ -4,9 +4,9 @@
   <% end %>
 </div>
   <div class="kensaku">
-    <%= form_with url: tops_index_path do |f| %>
+    <%= form_with(model: @search, url: searchs_new_path, method: :get) do |f| %>
       <%= f.text_field :search ,:size=>"80" ,:placeholder=>"スレタイ検索"%>
-      <%= f.submit :'検索' %>
+      <%= f.submit :'検索' ,:title => nil %>
     <% end %>
   </div>
 <%= link_to '新規スレッド作成', new_newthread_path , class: 'btn-cross' %>

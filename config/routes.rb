@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   get 'newthreads/:id/delete', to: 'newthreads#delete'
   delete 'newthreads/:id/delete', to: 'newthreads#destroy'
   
+  get 'searchs/new'
+  
   get 'concerns/search'
   resources :newthreads do
     resources :posts, only: [:create]

@@ -20,7 +20,7 @@ class NewthreadsController < ApplicationController
   
   def delete
     @thread = Newthread.find(params[:id])
-    @post = Post.where(newthread_id: [:id])
+    @post = Post.where(newthread_id: @thread)  #<% threadのidと紐づいているPostのコメントのidを取得　%>
   end
   
   def destroy

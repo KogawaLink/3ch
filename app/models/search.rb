@@ -1,9 +1,10 @@
 class Search < ApplicationRecord
+ has_many :newthread
  def self.search(search)
   if search
-   Search.where(['title LIKE ?', "%#{search}%"])
+   Newthread.where(['title LIKE ?', "%#{search}%"])
   else
-   Search.all
+   Newthread.all
   end
  end
 end
