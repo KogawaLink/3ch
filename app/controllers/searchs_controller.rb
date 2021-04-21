@@ -1,4 +1,5 @@
 class SearchsController < ApplicationController
-  def new
+  def search
+    @searchs = Search.search(params[:keyword])
   end
 end
