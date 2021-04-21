@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   get 'newthreads/:id/delete', to: 'newthreads#delete'
   delete 'newthreads/:id/delete', to: 'newthreads#destroy'
   
-  get 'searchs/new', to: 'searchs#search'
+  get 'newthread/:id/searchs', to: 'searchs#search', as: 'searchs'
   
   get 'concerns/search'
   resources :newthreads do
