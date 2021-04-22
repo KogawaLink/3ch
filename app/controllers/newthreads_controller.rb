@@ -11,10 +11,10 @@ class NewthreadsController < ApplicationController
   def create
     @newthread = Newthread.new(newthread_params)
     if @newthread.save
-     redirect_to posts_path(@newthread), success:"新たなスレッドが生まれました。"
+      redirect_to posts_path(@newthread), success:"新たなスレッドが生まれました。"
     else
-     flash.now[:alert] = "失敗"
-     render :new
+      flash.now[:alert] = "入力していない欄があります。"
+      render :new
     end
   end
   
