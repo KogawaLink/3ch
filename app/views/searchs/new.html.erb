@@ -1,4 +1,4 @@
 <h1>Searchs#new</h1>
 <% @searchs.each do |thread| %>
-  <%= thread.title %><br>
+  <%= link_to "#{thread.title}", posts_path(thread.id) %><br>
 <% end %>
