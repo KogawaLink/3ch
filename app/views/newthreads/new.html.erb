@@ -1,3 +1,6 @@
+<%= link_to root_path do %>
+  <%= image_tag 'web_logo.png', class: 'top', alt: '３ちゃんねる' %>
+<% end %>
 <%= form_with(model: @newthread, url: newthreads_path, local: true) do |f| %>
   <body>
     <h1>新規スレッド作成</h1>

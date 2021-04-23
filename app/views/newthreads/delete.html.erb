@@ -1,8 +1,10 @@
 <h1>このスレッドを本当に削除しますか？</h1>
-<div class="title">
+<%= flash[:alert] %>
+<div class="delete_title">
   <%= @thread.title %>
 </div>
-<%= form_with(model: @thread, method: :delete) do |f| %>
+<%= form_with(model: @thread, method: :delete, local: true, class:'f_delete') do |f| %>
+  <div class="delete_mandatory">スレッド作成時のパスワードを入力してください</div>
   <%= f.text_field :again_password , class:'password' %>
-  <%= f.submit "送信" , class:'sousin' %>
+  <%= f.submit "削除" , class:'sousin' %>
 <% end %>
