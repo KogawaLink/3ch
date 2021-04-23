@@ -13,7 +13,7 @@ class NewthreadsController < ApplicationController
     if @newthread.save
       redirect_to posts_path(@newthread), success:"新たなスレッドが生まれました。"
     else
-      flash.now[:alert] = "入力していない欄があります。"
+      flash.now[:danger] = "入力していない欄があります。"
       render :new
     end
   end

@@ -4,7 +4,7 @@ class Search < ApplicationRecord
   if search
    Newthread.where(['title LIKE ?', "%#{search}%"])
   else
-   Newthread.all
+   @none = "お探しのスレッドはありませんでした。"
   end
  end
 end

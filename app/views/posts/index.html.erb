@@ -9,6 +9,7 @@
     <%= @newthread.over_view %>
   </div>
   <% @newthread.posts.each.with_index(2) do |post, index| %>
+  <img src="/assets/pinkline.png" alt="コメント仕切り" >
     <div class="comment">
       <%  if post.id.present? %>
         <%= index %>
