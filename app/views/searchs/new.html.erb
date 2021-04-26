@@ -5,7 +5,9 @@
       <%= f.submit :'検索' ,:title => nil %>
     <% end %>
   </div>
+<% if @searchs.blank? %>
+  検索結果がありません。
+<% end %>
 <% @searchs.each do |thread| %>
   <%= link_to "#{thread.title}", posts_path(thread.id) %><br>
-  <%= @none %>
 <% end %>

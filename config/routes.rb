@@ -6,8 +6,8 @@ Rails.application.routes.draw do
   root 'tops#index'
   get 'newthread/:id/posts', to: 'posts#index', as: 'posts'
   
-  get 'newthreads/:id/delete', to: 'newthreads#delete'
-  delete 'newthreads/:id/delete', to: 'newthreads#destroy'
+  get 'newthreads/delete/:id', to: 'newthreads#delete', as: 'newthread_delete'
+  delete 'newthreads/delete/:id', to: 'newthreads#destroy', as: 'newthread_destroy'
   
   get 'newthread/:id/searchs', to: 'searchs#search', as: 'searchs'
   
