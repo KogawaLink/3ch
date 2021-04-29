@@ -6,7 +6,7 @@
     <% end %>
   </div>
 <% if @searchs.blank? %>
-  検索結果がありません。
+  <div class="none">検索結果がありません。</div>
 <% end %>
 <% @searchs.each do |thread| %>
   <%= link_to "#{thread.title}", posts_path(thread.id) %><br>

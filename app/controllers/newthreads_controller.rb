@@ -10,6 +10,7 @@ class NewthreadsController < ApplicationController
   
   def create
     @newthread = Newthread.new(newthread_params)
+    @newthread.newthread_ip = request.remote_ip
     if @newthread.save
       redirect_to posts_path(@newthread), success:"新たなスレッドが生まれました。"
     else
@@ -36,6 +37,6 @@ class NewthreadsController < ApplicationController
   
   private
   def newthread_params
-    params.require(:newthread).permit(:title, :over_view, :name, :pw)
+    params.require(:newthread).permit(:title, :over_view, :name, :pw, :newthread_ip)
   end
 end

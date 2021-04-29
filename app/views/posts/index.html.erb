@@ -3,7 +3,7 @@
 </h1>
 <div class="kakomi-te1">
   <div class="toukousya">
-    1  <%= @newthread.name %>  <%= timedate(@newthread[:created_at]) %>
+    1  <%= @newthread.name %>  <%= timedate(@newthread[:created_at]) %>  ID  <%= Digest::MD5.hexdigest("request.remote_ip.to_s + #{@newthread.newthread_ip}")[0,8] %>
   </div>
   <div class="comment">
     <%= @newthread.over_view %>
@@ -14,7 +14,8 @@
       <%  if post.id.present? %>
         <%= index %>
         <%= post.postname %>
-        <%= timedate(post[:created_at]) %><br>
+        <%= timedate(post[:created_at]) %>  ID  <%= Digest::MD5.hexdigest("request.remote_ip.to_s + #{@post.post_ip}")[0,8] %>
+        <br>
         <%= simple_format(post.comment) %>
       <% end %>
     </div>

@@ -8,6 +8,7 @@ class PostsController < ApplicationController
  def create
    @newthread = Newthread.find(params[:newthread_id])
    @post = @newthread.posts.new(post_params)
+   @post.post_ip = request.remote_ip
    if @post.save
      redirect_to posts_path(@newthread)
    else
