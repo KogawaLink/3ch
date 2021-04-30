@@ -6,14 +6,17 @@ class PostsController < ApplicationController
  end
  
  def create
-   @newthread = Newthread.find(params[:newthread_id])
-   @post = @newthread.posts.new(post_params)
-   @post.post_ip = request.remote_ip
-   if @post.save
+  @newthread = Newthread.find(params[:newthread_id])
+  @post = @newthread.posts.new(post_params)
+  @post.ip_address = request.remote_ip
+  if @post.save
+    respond_to do |format|
+     format.js
+    end
      redirect_to posts_path(@newthread)
-   else
+  else
      render "newthreads/new"
-   end
+  end
  end
 
  private

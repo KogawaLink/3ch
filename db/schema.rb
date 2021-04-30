@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 2021_03_10_060137) do
     t.string "over_view"
     t.string "name"
     t.string "pw"
-    t.string "newthread_ip", null: false
+    t.string "ip_address", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 2021_03_10_060137) do
     t.string "postname"
     t.string "comment"
     t.integer "newthread_id"
-    t.string "post_ip", null: false
+    t.string "ip_address", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

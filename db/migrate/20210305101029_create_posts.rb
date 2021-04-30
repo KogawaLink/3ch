@@ -4,7 +4,7 @@ class CreatePosts < ActiveRecord::Migration[5.2]
       t.string :postname
       t.string :comment
       t.integer :newthread_id
-      t.string :post_ip, null: false
+      t.string :ip_address, null: false
       
       t.timestamps
     end

@@ -3,7 +3,7 @@
 </h1>
 <div class="kakomi-te1">
   <div class="toukousya">
-    1  <%= @newthread.name %>  <%= timedate(@newthread[:created_at]) %>  ID  <%= Digest::MD5.hexdigest("request.remote_ip.to_s + #{@newthread.newthread_ip}")[0,8] %>
+    1  <%= @newthread.name %>  <%= timedate(@newthread[:created_at]) %>  ID  <%= Digest::MD5.hexdigest("request.remote_ip.to_s + #{@newthread.ip_address}")[0,8] %>
   </div>
   <div class="comment">
     <%= @newthread.over_view %>
@@ -14,7 +14,7 @@
       <%  if post.id.present? %>
         <%= index %>
         <%= post.postname %>
-        <%= timedate(post[:created_at]) %>  ID  <%= Digest::MD5.hexdigest("request.remote_ip.to_s + #{@post.post_ip}")[0,8] %>
+        <%= timedate(post[:created_at]) %>  ID  <%= Digest::MD5.hexdigest("request.remote_ip.to_s + #{@post.ip_address}")[0,8] %>
         <br>
         <%= simple_format(post.comment) %>
       <% end %>
@@ -30,8 +30,14 @@
       <%= f.text_area :comment, :placeholder=>"コメント" , class:'comments' %>
     </div>
     <div class="sousin-btn">
-      <%= f.submit "送信" , class:'sousin' %>
+      <%= f.submit "送信" , class:'sousin' , id:'push' %>
     </div>
 <% end %>
+<input type="button" id="push" onclick="return push()" value="クリックするとプッシュ通知が送られます"/>
+    <script>
+      function push(){
+          Push.create('更新情報');
+      }
+    </script>
 <%= flash[:notice] %>
 <%= link_to 'スレッドを削除' , {controller: 'newthreads', action: 'delete'} , class: :delete_btn %>
