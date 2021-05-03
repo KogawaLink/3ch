@@ -45,6 +45,7 @@ h1 {
   text-decoration: none;
   font-weight: bold;
   color: #03A9F4;
+  font-size: 30px;
 }
 .btn-cross:before, .btn-cross:after {
   content: '';
@@ -212,4 +213,30 @@ background-repeat:repeat-x;
 
 .line {
   width: 100%;
+}
+
+.flame {
+position: relative;
+margin: 3em 17%;
+width: 20%;
+padding: 1em;
+border: 6px solid #f6bfbc;
+border-radius: 3em .8em 3em .7em/.9em 2em .8em 3em;
+}
+.flame .flame-title {
+position: absolute;
+display: inline-block;
+top: -13px;
+left: 15px;
+padding: 0 10px;
+line-height: 1;
+font-size: 20px;
+background: #FFF;
+color: #b20023;
+font-weight: bold;
+}
+.flame li {
+padding: 3px 5px;
+font-size: 16px;
+margin: 0;
 }
