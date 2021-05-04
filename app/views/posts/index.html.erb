@@ -1,6 +1,11 @@
-<h1>
-  <%= @newthread.title %>
-</h1>
+<span class="inline-title">
+  <%= link_to root_path do %>
+    <%= image_tag 'web_logo.png', class: 'top', alt: '３ちゃんねる' %>
+  <% end %>
+  <h1 class="inline_title">
+    <%= @newthread.title %>
+  </h1>
+</span>
 <div class="kakomi-te1">
   <div class="toukousya">
     1  <%= @newthread.name %>  <%= timedate(@newthread[:created_at]) %>  ID  <%= Digest::MD5.hexdigest("request.remote_ip.to_s + #{@newthread.ip_address}")[0,8] %>

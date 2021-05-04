@@ -8,6 +8,10 @@
 <% if @searchs.blank? %>
   <div class="none">検索結果がありません。</div>
 <% end %>
-<% @searchs.each do |thread| %>
-  <%= link_to "#{thread.title}", posts_path(thread.id) %><br>
-<% end %>
+<div class="result">
+  <% @searchs.each do |thread| %>
+    <p class="thread_result"><%= link_to "#{thread.title.truncate(25)}", posts_path(thread.id) %>
+    <span class="over_views"><%= thread.over_view.truncate(40) %></span>
+    </p>
+  <% end %>
+</div>

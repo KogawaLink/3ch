@@ -9,12 +9,14 @@
       <%= f.submit :'検索' ,:title => nil %>
     <% end %>
   </div>
+<span class="topinline">
+  <div class="flame">
+    <span class="flame-title">新規スレッド</span>
+    <ul>
+      <% @thread.each do |thread, i| %>
+        <li><%= link_to "#{thread.title.truncate(20)}", posts_path(thread.id), class: "titles" %></li>
+      <% end %>
+    </ul>
+  </div>
+</span>
 <%= link_to '新規スレッド作成', new_newthread_path , class: 'btn-cross' %>
-<div class="flame">
-  <span class="flame-title">新着スレッド</span>
-  <ul>
-    <% @thread.each do |thread, i| %>
-      <li><%= link_to "#{thread.title.truncate(20)}", posts_path(thread.id), class: "titles" %></li>
-    <% end %>
-  </ul>
-</div>
