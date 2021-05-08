@@ -10,6 +10,10 @@ class PostsController < ApplicationController
   @post = @newthread.posts.new(post_params)
   @post.ip_address = request.remote_ip
   if @post.save
+       CreateNotification.call(
+        contents: { 'en' => 'Post created!', 'ja' => 'スレッドが更新されました' },
+        type: 'posts#create'
+       )
     respond_to do |format|
      format.js
     end
