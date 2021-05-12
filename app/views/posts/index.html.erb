@@ -22,6 +22,9 @@
         <%= timedate(post[:created_at]) %>  ID  <%= Digest::MD5.hexdigest("#{request.remote_ip.to_s}#{post.ip_address}")[0,8] %>
         <br>
         <%= text_url_to_link(simple_format(h(post.comment))).html_safe %>
+        <%  if post.image.present? %>
+          <%= image_tag post.image.url %>
+        <% end %>
       <% end %>
     </div>
   <% end %>
@@ -33,6 +36,9 @@
     <p></p>
     <div class="commentss">
       <%= f.text_area :comment, :placeholder=>"コメント" , class:'comments' %>
+    </div>
+    <div class="image-up">
+      <%= f.file_field :image %>
     </div>
     <div class="sousin-btn">
       <%= f.submit "送信" , class:'sousin' , id:'push' %>
