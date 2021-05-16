@@ -5,13 +5,13 @@
     <title>３ちゃんねる</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/push.js/0.0.11/push.min.js"></script>
-    <link rel=“OneSignalSDKWorker” href=“/OneSignalSDKWorker.js”>
-    <link rel=“OneSignalSDKUpdaterWorker” href=“/OneSignalSDKUpdaterWorker.js”>
+    <link rel="OneSignalSDKWorker" href="/OneSignalSDKWorker.js">
+    <link rel="OneSignalSDKUpdaterWorker" href="/OneSignalSDKUpdaterWorker.js">
     <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
     <script>
       window.OneSignal = window.OneSignal || [];
@@ -19,10 +19,12 @@
         OneSignal.init({
           appId: "32ecc738-095a-49b2-92c3-5da9652d834f",
           notifyButton: {
-            enable: true,
+            enable: true
+          }
         });
       });
     </script>
+  </head>
 
   <body>
     <% flash.each do|key, value| %>

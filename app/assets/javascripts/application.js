@@ -16,18 +16,3 @@
 //= require turbolinks
 //= require bootstrap-sprockets
 //= require_tree .
-
-<script>
-    function push(){
-        Push.create("更新情報",
-        {
-            body: "スレッドの更新をお知らせします",
-            icon: 'web_logo.png',
-            timeout: 4000,
-            onClick: function () {
-                window.focus();
-                this.close();
-            }
-        })
-    }
-</script>;
