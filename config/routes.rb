@@ -15,5 +15,6 @@ Rails.application.routes.draw do
   resources :newthreads do
     resources :posts, only: [:create]
   end
-  
+  match '/OneSignalSDKUpdaterWorker.js', to: '/OneSignalSDKUpdaterWorker.js', via: :all
+  match '/OneSignalSDKWorker.js', to: '/OneSignalSDKUpdaterWorker.js', via: :all
 end
