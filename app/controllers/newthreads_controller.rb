@@ -29,7 +29,7 @@ class NewthreadsController < ApplicationController
     if  @thread.pw.eql?(params[:newthread][:again_password]) && @thread.posts.destroy_all && @thread.destroy!
       redirect_to root_path, success: '削除しました。'
     else
-      flash.now[:alert] = 'パスワードが違います'
+      flash[:danger] = 'パスワードが違います'
       redirect_to newthread_delete_path(@thread)
     end
   end
