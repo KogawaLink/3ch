@@ -29,6 +29,7 @@
     </div>
   <% end %>
 </div>
+<%= paginate @newthread_posts %>
 <%= form_with(model: @post, url: newthread_posts_path(@newthread.id)) do |f| %>
     <div class="image-up">
       <%= f.file_field :image %>

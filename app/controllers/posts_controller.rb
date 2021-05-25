@@ -2,6 +2,7 @@ class PostsController < ApplicationController
  
  def index
   @newthread = Newthread.includes(:posts).find(params[:id])
+  @newthread_posts = @newthread.posts.page(params[:page]).per(5)
   @post = @newthread.posts.new
  end
  
