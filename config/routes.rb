@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   delete 'newthreads/delete/:id', to: 'newthreads#destroy', as: 'newthread_destroy'
   
   get 'newthread/:id/searchs', to: 'searchs#search', as: 'searchs'
+  get 'tops/author'
   
   get 'concerns/search'
   resources :newthreads do

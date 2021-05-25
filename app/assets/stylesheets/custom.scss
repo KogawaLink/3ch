@@ -165,6 +165,7 @@ background-repeat:repeat-x;
   width: 20%;
   height: 250px;
   resize: none;
+  display: inline-block;
 }
 
 
@@ -218,7 +219,7 @@ background-repeat:repeat-x;
 .top {
   width: 2%;
   height: 2%;
-  margin: 1% 1% 1% 1%;
+  margin: 1vw 0 0 2vw;
 }
 
 .line {
@@ -270,8 +271,23 @@ margin: 0;
 }
 .inline_title {
   display: inline-block;
-  margin: 0 10% 0 10%;
+  text-align: center;
 }
 .newthread_title {
   text-align: center;
+}
+.author {
+  font-weight: bold;
+  font-size: 25px;
+}
+.author-s {
+  text-align: right;
+  margin: 1vw 2vw 0 0;
+}
+  
+.image-up {
+  margin: 0 0 1% 43%;
+}
+.sousin {
+  display: inline-block;
 }

@@ -1,8 +1,10 @@
-<div style="text-align: center">
-  <%= link_to root_path do %>
-    <%= image_tag 'web_logo.png', class: 'logo', alt: '３ちゃんねる' %>
-  <% end %>
+<div class="author-s"><%= link_to '製作者の声', tops_author_path , class: 'author' %>
 </div>
+  <div style="text-align: center">
+    <%= link_to root_path do %>
+      <%= image_tag 'web_logo.png', class: 'logo', alt: '３ちゃんねる' %>
+    <% end %>
+  </div>
   <div class="kensaku">
     <%= form_with(model: @search, url: searchs_new_path, local: true, method: :get) do |f| %>
       <%= f.text_field :keyword ,:size=>"80" ,:placeholder=>"スレタイ検索"%>
