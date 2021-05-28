@@ -14,7 +14,7 @@
     <%= text_url_to_link(simple_format(h(@newthread.over_view))).html_safe %>
   </div>
   <% @newthread.posts.each.with_index(2) do |post, index| %>
-  <img src="/assets/line.png" , alt="コメント仕切り" , class='line' >
+  <img src="/assets/line.png" , alt="コメント仕切り" , class='line'>
     <div class="comment">
       <%  if post.id.present? %>
         <%= index %>
@@ -34,14 +34,14 @@
     <div class="image-up">
       <%= f.file_field :image %>
     </div>
-    <div class="commentss">
+    <div class="commentsss">
       <%= f.text_field :postname , :size=>"40" , :placeholder=>"投稿者" , class:'names' %>
     </div>
     <p></p>
-    <div class="commentss">
-      <%= f.text_area :comment, :placeholder=>"コメント" , class:'comments' %>
-    </div>
-      <%= f.submit "送信" , class:'sousin' , id:'push' %>
+      <div class="commentss">
+        <div class="center"><%= f.text_area :comment, :placeholder=>"コメント" , class:'comments' %></div>
+      </div>
+      <div class="push-btn"><%= f.submit "送信" , class:'sousin' , id:'push' %></div>
 <% end %>
 <input type="button" id="push" onclick="return push()" value="クリックするとプッシュ通知が送られます"/>
     <script>

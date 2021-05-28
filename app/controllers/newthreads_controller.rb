@@ -34,7 +34,6 @@ class NewthreadsController < ApplicationController
     end
   end
   
-  
   private
   def newthread_params
     params.require(:newthread).permit(:title, :over_view, :name, :pw, :ip_address)
