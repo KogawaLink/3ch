@@ -36,6 +36,9 @@
     </div>
     <div class="commentsss">
       <%= f.text_field :postname , :size=>"40" , :placeholder=>"投稿者" , class:'names' %>
+      <% if @post.nil? %>
+        <% @post.noname %>
+      <% end %>
     </div>
     <p></p>
       <div class="commentss">
