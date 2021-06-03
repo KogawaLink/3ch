@@ -14,7 +14,7 @@ class NewthreadsController < ApplicationController
     if @newthread.save
       @post = @newthread.posts.new
       @post.postname = @newthread.name
-      @post.ip_adress = @newthread.ip_adress
+      @post.ip_address = @newthread.ip_address
       @post.comment = params[:newthread][:over_view]
       if @post.save
         redirect_to posts_path(@newthread), success:"新たなスレッドが生まれました。"

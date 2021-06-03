@@ -5,8 +5,6 @@ class CreateNewthreads < ActiveRecord::Migration[5.2]
       t.string :name
       t.string :pw
       t.string :ip_address, null: false
-
-      t.text :over_view 
       t.timestamps
     end
   end

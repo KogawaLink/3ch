@@ -7,16 +7,8 @@
   </h1>
 </span>
 <div class="kakomi-te1">
-  <div class="toukousya">
-    1  <%= @newthread.name %>  <%= timedate(@newthread[:created_at]) %>  ID  <%= Digest::MD5.hexdigest("#{request.remote_ip.to_s}#{@newthread.ip_address}")[0,8] %>
-  </div>
-  <div class="comment">
-    <%= text_url_to_link(simple_format(h(@newthread.over_view))).html_safe %>
-  </div>
-  <% @newthread_posts.each.with_index(2) do |post, index| %>
-  <img src="/assets/line.png" , alt="コメント仕切り" , class='line'>
+  <% @newthread_posts.each.with_index(1) do |post, index| %>
     <div class="comment">
-      <%  if post.id.present? %>
         <%= index %>
         <%= post.postname %>
         <%= timedate(post[:created_at]) %>  ID  <%= Digest::MD5.hexdigest("#{request.remote_ip.to_s}#{post.ip_address}")[0,8] %>
@@ -25,7 +17,7 @@
         <%  if post.image.present? %>
           <%= image_tag post.image.url %>
         <% end %>
-      <% end %>
+        <img src="/assets/line.png" , alt="コメント仕切り" , class='line'>
     </div>
   <% end %>
 </div>

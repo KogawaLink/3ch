@@ -14,16 +14,16 @@ ActiveRecord::Schema.define(version: 2021_03_10_060137) do
 
   create_table "newthreads", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title"
-    t.text "over_view"
     t.string "name"
     t.string "pw"
     t.string "ip_address", null: false
+    t.text "over_view"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "posts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "postname"
+    t.string "postname", default: "名無しさん"
     t.text "comment"
     t.integer "newthread_id"
     t.string "ip_address", null: false
