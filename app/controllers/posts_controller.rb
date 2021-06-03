@@ -9,6 +9,10 @@ class PostsController < ApplicationController
   @newthread = Newthread.find(params[:newthread_id])
   @post = @newthread.posts.new(post_params)
   @post.ip_address = request.remote_ip
+  @postname = @post.postname
+  if @postname.present?
+   @noname
+  end
   if @post.save
        CreateNotification.call(
         contents: { 'en' => 'Post created!', 'ja' => 'スレッドが更新されました' },

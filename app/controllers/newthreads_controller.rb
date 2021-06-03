@@ -12,7 +12,13 @@ class NewthreadsController < ApplicationController
     @newthread = Newthread.new(newthread_params)
     @newthread.ip_address = request.remote_ip
     if @newthread.save
-      redirect_to posts_path(@newthread), success:"新たなスレッドが生まれました。"
+      @post = @newthread.posts.new
+      @post.postname = @newthread.name
+      @post.ip_adress = @newthread.ip_adress
+      @post.comment = params[:newthread][:over_view]
+      if @post.save
+        redirect_to posts_path(@newthread), success:"新たなスレッドが生まれました。"
+      end
     else
       flash.now[:danger] = "入力していない欄があります。"
       render :new
@@ -36,6 +42,6 @@ class NewthreadsController < ApplicationController
   
   private
   def newthread_params
-    params.require(:newthread).permit(:title, :over_view, :name, :pw, :ip_address)
+    params.require(:newthread).permit(:title, :name, :pw, :ip_address)
   end
 end

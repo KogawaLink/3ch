@@ -3,6 +3,5 @@ class Post < ApplicationRecord
  mount_uploader :image, ImageUploader
  
  @noname = "名無しさん"
- validates :postname, presence: true
  validates :comment, presence: true
 end
