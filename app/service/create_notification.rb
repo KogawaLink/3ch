@@ -29,7 +29,7 @@ class CreateNotification
 
   def body
     {
-      'app_id' => ENV['ONESIGNAL_APPID'],
+      'app_id' => '32ecc738-095a-49b2-92c3-5da9652d834f',
       'url'    => 'https://95d2aee039d34d0685c446f0862e07fa.vfs.cloud9.us-east-2.amazonaws.com',
       'data'   => { 'type': type },
       'included_segments' => ['All'],

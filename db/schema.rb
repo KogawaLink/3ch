@@ -17,7 +17,6 @@ ActiveRecord::Schema.define(version: 2021_03_10_060137) do
     t.string "name"
     t.string "pw"
     t.string "ip_address", null: false
-    t.text "over_view"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -28,11 +27,6 @@ ActiveRecord::Schema.define(version: 2021_03_10_060137) do
     t.integer "newthread_id"
     t.string "ip_address", null: false
     t.string "image"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "searches", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
  def index
   @newthread = Newthread.includes(:posts).find(params[:id])
-  @newthread_posts = @newthread.posts.page(params[:page]).per(5)
+  @newthread_posts = @newthread.posts.page(params[:page]).per(30)
   @post = @newthread.posts.new
  end
  
@@ -10,8 +10,8 @@ class PostsController < ApplicationController
   @post = @newthread.posts.new(post_params)
   @post.ip_address = request.remote_ip
   @postname = @post.postname
-  if @postname.present?
-   @noname
+  if @postname.nil?
+   @postname = @noname
   end
   if @post.save
        CreateNotification.call(

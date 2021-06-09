@@ -10,9 +10,9 @@ class NewthreadsController < ApplicationController
   
   def create
     @newthread = Newthread.new(newthread_params)
-    @newthread.ip_address = request.remote_ip
+    @newthread.ip_address = request.remote_ip  #<% ipアドレスを取得し保存 %>
     if @newthread.save
-      @post = @newthread.posts.new
+      @post = @newthread.posts.new  #<% Newthreadが作成されたと同時に最初のpostを作成保存 %>
       @post.postname = @newthread.name
       @post.ip_address = @newthread.ip_address
       @post.comment = params[:newthread][:over_view]
