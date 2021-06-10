@@ -6,7 +6,7 @@
     <% end %>
   </div>
   <div class="kensaku">
-    <%= form_with(model: @search, url: searchs_new_path, local: true, method: :get) do |f| %>
+    <%= form_with url: newthreads_search_path, local: true, method: :get do |f| %>
       <%= f.text_field :keyword ,:size=>"80" ,:placeholder=>"スレタイ検索"%>
       <%= f.submit :'検索' ,:title => nil %>
     <% end %>

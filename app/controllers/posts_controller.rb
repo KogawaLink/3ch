@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
  def index
   @newthread = Newthread.includes(:posts).find(params[:id])
-  @newthread_posts = @newthread.posts.page(params[:page]).per(30)
+  @newthread_posts = @newthread.posts.order("created_at desc").page(params[:page]).per(5)
   @post = @newthread.posts.new
  end
  
@@ -17,7 +17,7 @@ class PostsController < ApplicationController
        CreateNotification.call(
         contents: { 'en' => 'Post created!', 'ja' => 'スレッドが更新されました' },
         type: 'posts#create'
-       )
+       );
     respond_to do |format|
      format.js
     end

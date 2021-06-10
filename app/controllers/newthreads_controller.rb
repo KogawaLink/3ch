@@ -9,6 +9,12 @@ class NewthreadsController < ApplicationController
   end
   
   def create
+    @post = Post.new
+    @post.comment = params[:newthread][:over_view]
+    if !@post.valid?
+      flash.now[:danger] = "入力していない欄があります。"
+      render :new and return
+    end
     @newthread = Newthread.new(newthread_params)
     @newthread.ip_address = request.remote_ip  #<% ipアドレスを取得し保存 %>
     if @newthread.save
@@ -17,7 +23,9 @@ class NewthreadsController < ApplicationController
       @post.ip_address = @newthread.ip_address
       @post.comment = params[:newthread][:over_view]
       if @post.save
-        redirect_to posts_path(@newthread), success:"新たなスレッドが生まれました。"
+        redirect_to posts_path(@newthread), success:"新たなスレッドが生まれました。" and return
+      else
+        render :new
       end
     else
       flash.now[:danger] = "入力していない欄があります。"
@@ -38,6 +46,10 @@ class NewthreadsController < ApplicationController
       flash[:danger] = 'パスワードが違います'
       redirect_to newthread_delete_path(@thread)
     end
+  end
+  
+  def search
+    @threads = Newthread.search(params[:keyword])
   end
   
   private

@@ -3,5 +3,6 @@ class Newthread < ApplicationRecord
   
   validates :title, presence: true
   validates :name, presence: true
-  validates :over_view, presence: true
+  
+  scope :search, -> (word) {where(['title LIKE ?', "%#{word}%"])}
 end
