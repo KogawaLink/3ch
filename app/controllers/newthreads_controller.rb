@@ -11,7 +11,7 @@ class NewthreadsController < ApplicationController
   def create
     @post = Post.new
     @post.comment = params[:newthread][:over_view]
-    if !@post.valid?
+    if !@post.valid?  #<% バリデーションを実施（空欄禁止）%>
       flash.now[:danger] = "入力していない欄があります。"
       render :new and return
     end
@@ -23,7 +23,7 @@ class NewthreadsController < ApplicationController
       @post.ip_address = @newthread.ip_address
       @post.comment = params[:newthread][:over_view]
       if @post.save
-        redirect_to posts_path(@newthread), success:"新たなスレッドが生まれました。" and return
+        redirect_to posts_path(@newthread), success:"新たなスレッドが生まれました。" and return  #<% エラーが起きるため and return にて解消 %>
       else
         render :new
       end
@@ -48,7 +48,7 @@ class NewthreadsController < ApplicationController
     end
   end
   
-  def search
+  def search  #<% 検索機能 %>
     @threads = Newthread.search(params[:keyword])
   end
   

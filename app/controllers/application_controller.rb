@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   before_action :search
   def search
-    @searchs = Search.search(params[:search])
+    @searchs = Newthread.search(params[:search])
   end
   
   protect_from_forgery with: :exception
