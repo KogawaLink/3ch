@@ -1,15 +1,15 @@
 <h1>検索結果</h1>
   <div class="kensaku">
-    <%= form_with url: newthreads_search_path, local: true, method: :get do |f| %>
+    <%= form_with url: newthreads_search_path, local: true, method: :get do |f| %>  <%# 検索フォーム %>
       <%= f.text_field :keyword ,:size=>"80" ,:placeholder=>"スレタイ検索" %>
       <%= f.submit :'検索' ,:title => nil %>
     <% end %>
   </div>
-<% if @threads.blank? %>
+<% if @threads.blank? %>  <%# 該当するkeywordを持っているthreadsがない場合 %>
   <div class="none">検索結果がありません。</div>
 <% end %>
 <div class="result">
-  <% @threads.each do |thread| %>
+  <% @threads.each do |thread| %>  <%# 検索結果があった場合、該当するtitleと紐づく最初のコメントを表示 %>
     <p class="thread_result"><%= link_to "#{thread.title.truncate(25)}", posts_path(thread.id) %>
     <span class="over_views"><%= thread.posts[0].comment.truncate(40) %></span>
     </p>
