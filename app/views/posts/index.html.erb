@@ -7,9 +7,9 @@
   </h1>
 </span>
 <div class="kakomi-te1">
-  <% @newthread_posts.each.with_index(1) do |post, index| %>
+  <% @newthread_posts.each.with_index(@start) do |post, index| %>
     <div class="comment">
-        <%= index %>
+        <%= @postcount - index %>  <%# ページに対応するcommentを全件取得しページ数に対する番号を引き降順表示させる %>
         <%= post.postname %>
         <%= timedate(post[:created_at]) %>  ID  <%= Digest::MD5.hexdigest("#{request.remote_ip.to_s}#{post.ip_address}")[0,8] %>  <%# ip_addressに対応するハッシュ値を表示 %>
         <br>
