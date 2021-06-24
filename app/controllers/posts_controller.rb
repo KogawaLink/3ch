@@ -20,7 +20,7 @@ class PostsController < ApplicationController
        CreateNotification.call(
         contents: { 'en' => 'Post created!', 'ja' => 'スレッドが更新されました' },
         type: 'posts#create'
-       );
+       )
     respond_to do |format|
      format.js
     end

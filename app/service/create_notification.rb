@@ -22,7 +22,7 @@ class CreateNotification
 
   def headers
     {
-      'Authorization' => "Basic #{ENV['ONESIGNAL_AUTHKEY']}",
+      'Authorization' => ENV['ONESIGNAL_AUTHKEY'],
       'Content-Type'  => 'application/json'
     }
   end
