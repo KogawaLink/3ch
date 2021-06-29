@@ -7,5 +7,9 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   
   add_flash_types :success, :info, :warning, :danger
+  
+  def gon
+    gon.onesignal_appid = ENV['ONESIGNAL_APPID']
+  end
  
 end
