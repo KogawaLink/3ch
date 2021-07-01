@@ -76,7 +76,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'jquery-rails'
 gem 'bootstrap-sass'
-
+gem 'fog-aws'
 group :production do
   gem 'pg'
 end
