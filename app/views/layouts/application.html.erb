@@ -13,10 +13,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/push.js/0.0.11/push.min.js"></script>
     <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
     <script>
+      var onesignalappid = gon.onesignal_appid;
       window.OneSignal = window.OneSignal || [];
       OneSignal.push(function() {
         OneSignal.init({
-          appId: '32ecc738-095a-49b2-92c3-5da9652d834f',
+          appId: onesignalappid,
           notifyButton:{
             enable:true,
           },
@@ -24,7 +25,7 @@
       });
     </script>
   </head>
-
+  
   <body>
     <% flash.each do|key, value| %>
       <div class="alert alert-<%= key %>" role="alert"><%= value %></div>
