@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-  before_action :search
+  before_action :search, :load_onesignal_appid
   def search
     @searchs = Newthread.search(params[:search])
   end
@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
   
   add_flash_types :success, :info, :warning, :danger
   
-  def gon
+  def load_onesignal_appid
     gon.onesignal_appid = ENV['ONESIGNAL_APPID']
   end
  
