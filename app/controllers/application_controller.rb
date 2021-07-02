@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
   add_flash_types :success, :info, :warning, :danger
   
   def load_onesignal_appid
-    gon.onesignal_appid = ENV['ONESIGNAL_APPID']
+    gon.onesignal_appid = ENV['HEROKU_ONESIGNAL_APPID']
   end
  
 end
