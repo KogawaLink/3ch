@@ -35,11 +35,5 @@
       </div>
       <div class="push-btn"><%= f.submit "送信" , class:'sousin' , id:'push' %></div>
 <% end %>
-<input type="button" id="push" onclick="return push()" value="クリックするとプッシュ通知が送られます"/>
-    <script>
-      function push(){
-          Push.create('更新情報');
-      }
-    </script>
 <%= flash[:notice] %>
 <%= link_to 'スレッドを削除' , {controller: 'newthreads', action: 'delete'} , class: :delete_btn %>

@@ -10,14 +10,13 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/push.js/0.0.11/push.min.js"></script>
     <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
     <script>
       window.OneSignal = window.OneSignal || [];
       OneSignal.push(function() {
-        var onesignalappid = gon.onesignal_appid;
+        var onesignalappid = gon.onesignal_appid; //railsの環境変数をjavascriptに代入
         OneSignal.init({
-          appId: onesignalappid,
+          appId: onesignalappid, //javascriptに入れられた環境変数を引っ張ってきている
           notifyButton:{
             enable:true,
           },
