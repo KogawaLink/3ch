@@ -30,8 +30,9 @@
     <p></p>
       <div class="commentss">
         <div class="center"><%= f.text_area :comment, :placeholder=>"コメント" , class:'comments' %></div>
+      
+        <div class="push-btn"><%= f.submit "送信" , class:'sousin' , id:'push' %></div>
       </div>
-      <div class="push-btn"><%= f.submit "送信" , class:'sousin' , id:'push' %></div>
 <% end %>
 <%= flash[:notice] %>
 <%= link_to 'スレッドを削除' , {controller: 'newthreads', action: 'delete'} , class: :delete_btn %>
