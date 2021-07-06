@@ -1,11 +1,9 @@
-<span class="inline-title">
   <%= link_to root_path do %>
     <%= image_tag 'web_logo.png', class: 'top', alt: '３ちゃんねる' %>
   <% end %>
-  <h1 class="inline_title">
-    <span class="newthread_title"><%= @newthread.title %></span>
+  <h1>
+    <div class="newthread_title"><%= @newthread.title %></div>
   </h1>
-</span>
 <div class="kakomi-te1">
   <% @newthread_posts.each.with_index(@start) do |post, index| %>
     <div class="comment">

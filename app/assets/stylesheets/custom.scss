@@ -5,7 +5,7 @@
 
 body {
   background-image: url("background.png");
-  background-size: 105%;
+  background-size: cover;
   background-attachment: fixed;
   background-position: center center;
 }
@@ -46,10 +46,10 @@ h1 {
 }
 
 .btn-cross {
-  margin: 0 0 0 17%;
   display: inline-block;
   position: relative;
   padding: 0.25em 1em;
+  margin: 3em 0 3em 0;
   border-top: solid 2px black;
   border-bottom: solid 2px black;
   text-decoration: none;
@@ -228,7 +228,6 @@ background-repeat:repeat-x;
 .flame {
 position: relative;
 margin: 3em 17%;
-width: 23%;
 padding: 1em;
 border: 6px solid #f6bfbc;
 border-radius: 3em .8em 3em .7em/.9em 2em .8em 3em;
@@ -242,7 +241,7 @@ left: 15px;
 padding: 0 10px;
 line-height: 1;
 font-size: 20px;
-background: #FFF;
+background: #dcf46c;
 color: #b20023;
 font-weight: bold;
 }
@@ -268,12 +267,9 @@ margin: 0;
   font-size: 50px;
   text-align: center;
 }
-.inline_title {
-  display: inline-block;
-  text-align: center;
-}
 .newthread_title {
   text-align: center;
+  margin: 0 5% 0 5%;
 }
 .author {
   font-weight: bold;
@@ -296,4 +292,7 @@ margin: 0;
 
 .paginate {
   text-align: center;
+}
+.top-width {
+  width: 80%;
 }
