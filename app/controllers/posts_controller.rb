@@ -13,8 +13,8 @@ class PostsController < ApplicationController
   @post = @newthread.posts.new(post_params)
   @post.ip_address = request.remote_ip
   @postname = @post.postname
-  if @postname.blank?
-   @post.postname = "名無しさん"
+  if @postname.blank?  #<%  フォームにpostnameが入力されているか判断する %>
+   @post.postname = "名無しさん"  #<%  なければ"名無しさん"を代入する %>
   end
   if @post.save
        CreateNotification.call(

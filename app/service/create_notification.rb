@@ -13,7 +13,9 @@ class CreateNotification
   end
 
   def call
-    HTTParty.post(API_URI, headers: headers, body: body)
+    res = HTTParty.post(API_URI, headers: headers, body: body)
+    Rails.logger.debug('test')
+    Rails.logger.debug(res)
   end
 
   private
