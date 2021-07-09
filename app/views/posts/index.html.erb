@@ -4,21 +4,25 @@
   <h1>
     <div class="newthread_title"><%= @newthread.title %></div>
   </h1>
-<div class="kakomi-te1">
-  <% @newthread_posts.each.with_index(@start) do |post, index| %>
-    <div class="comment">
-        <%= @postcount - index %>  <%# ページに対応するcommentを全件取得しページ数に対する番号を引き降順表示させる %>
-        <%= post.postname %>
-        <%= timedate(post[:created_at]) %>  ID  <%= Digest::MD5.hexdigest("#{request.remote_ip.to_s}#{post.ip_address}")[0,8] %>  <%# ip_addressに対応するハッシュ値を表示 %>
-        <br>
-        <%= text_url_to_link(simple_format(h(post.comment))).html_safe %>  <%# urlがあればリンク化する %>
-        <%  if post.image.present? %>  <%# 画像が貼られたか判断する %>
-          <%= image_tag post.image.url %>
+  <div class="continer">
+    <div class="row">
+      <div class="kakomi-te1">
+        <% @newthread_posts.each.with_index(@start) do |post, index| %>
+          <div class="comment">
+              <%= @postcount - index %>  <%# ページに対応するcommentを全件取得しページ数に対する番号を引き降順表示させる %>
+              <%= post.postname %>
+              <%= timedate(post[:created_at]) %>  ID  <%= Digest::MD5.hexdigest("#{request.remote_ip.to_s}#{post.ip_address}")[0,8] %>  <%# ip_addressに対応するハッシュ値を表示 %>
+              <br>
+              <%= text_url_to_link(simple_format(h(post.comment))).html_safe %>  <%# urlがあればリンク化する %>
+              <%  if post.image.present? %>  <%# 画像が貼られたか判断する %>
+                <%= image_tag post.image.url, class: 'sized' %>
+              <% end %>
+              <img src="/assets/line.png" , alt="コメント仕切り" , class='line'>
+          </div>
         <% end %>
-        <img src="/assets/line.png" , alt="コメント仕切り" , class='line'>
+      </div>
     </div>
-  <% end %>
-</div>
+  </div>
 <span class="paginate"><%= paginate @newthread_posts %></span>
 <%= form_with(model: @post, url: newthread_posts_path(@newthread.id)) do |f| %>
     <div class="image-up">
@@ -35,4 +39,6 @@
       </div>
 <% end %>
 <%= flash[:notice] %>
-<%= link_to 'スレッドを削除' , {controller: 'newthreads', action: 'delete'} , class: :delete_btn %>
+<div class="delete_btn_wrapper">
+  <%= link_to 'スレッドを削除' , {controller: 'newthreads', action: 'delete'} , class: :delete_btn %>
+</div>

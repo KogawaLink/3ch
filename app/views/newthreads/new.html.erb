@@ -2,35 +2,45 @@
   <%= image_tag 'web_logo.png', class: 'top', alt: '３ちゃんねる' %>
 <% end %>
 <%= form_with(model: @newthread, url: newthreads_path, local: true) do |f| %>
-  <body>
     <h1>新規スレッド作成</h1>
     <%= flash[:alert] %>
-    <div class="left">
-      <div class="title">
-        スレッドタイトル
+      <div class="continer">
+        <div class="row">
+          <div class="col-xs-12 col-lg-4 col-xs-offset-0 col-lg-offset-1">
+            <div class="title">
+              スレッドタイトル
+              <%= f.text_area :title , class:'titletext' %>
+            </div>
+          </div>
+          <div class="col-xs-12 col-lg-4 col-xs-offset-0 col-lg-offset-2">
+            <div class="margin-right">
+              <div class="name">作成者名</div>
+                <%= f.text_field :name , class:'sakuseisya' %>
+              </div>
+          </div>
+        </div>
       </div>
-        <%= f.text_area :title , class:'titletext' %>
-        <div class="gaiyou">スレッドの説明や概要</div>
-        <%= f.text_area :over_view , class:'overviews' %>
-       <div class="hosoku">※こちらに書かれたものがスレッドの１コメになります。</div>
-    </div>
-    <div class="right">
-      <div class="name">作成者名</div>
-        <%= f.text_field :name , class:'sakuseisya' %>
-      <div class="pw">スレッドのパスワードを入力してください</div>
-        <%= f.text_field :pw , class:'password' %>
-      <div class="tuiki">※ここに書かれたものがスレッド削除する際に必要になるので控えておくことをオススメします。
-        <p>※空欄でも構いませんがその場合他者から簡単に削除される場合があります。</p>
+      <div class="continer">
+        <div class="row">
+          <div class="col-xs-12 col-lg-4 col-xs-offset-0 col-lg-offset-1">
+              <div class="gaiyou">スレッドの説明や概要</div>
+              <%= f.text_area :over_view , class:'overviews' %>
+              <div class="hosoku">※こちらに書かれたものがスレッドの１コメになります。</div>
+          </div>
+          <div class="col-xs-12 col-lg-4 col-xs-offset-0 col-lg-offset-2">
+              <div class="pw">スレッドのパスワードを入力してください</div>
+              <%= f.text_field :pw , class:'password' %>
+            <div class="tuiki">※ここに書かれたものがスレッド削除する際に必要になるので控えておくことをオススメします。
+              <p>※空欄でも構いませんがその場合他者から簡単に削除される場合があります。</p>
+            </div>
+            <div class="inline">
+              <%= image_tag 'webkoukoku.gif', class: 'abc', alt: '広告' %>
+              <%= image_tag 'webkoukoku.gif', class: 'abc', alt: '広告' %>
+            </div>
+            <div class="inline">
+              <%= f.submit "作成する" , class:'sakusei' %>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="inline">
-        <%= image_tag 'webkoukoku.gif', class: 'abc', alt: '広告' %>
-      </div>
-      <div class="inline">
-        <%= image_tag 'webkoukoku.gif', class: 'abc', alt: '広告' %>
-      </div>
-      <div class="inline">
-        <%= f.submit "作成する" , class:'sakusei' %>
-      </div>
-    </div>
- </body>
 <% end %>

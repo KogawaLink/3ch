@@ -24,7 +24,7 @@ class CreateNotification
 
   def headers
     {
-      'Authorization' => 'Basic ' + ENV['ONESIGNAL_AUTHKEY'], #<% 設定した環境変数呼び出し %>
+      'Authorization' => ENV['ONESIGNAL_AUTHKEY'], #<% 設定した環境変数呼び出し %>
       'Content-Type'  => 'application/json'
     }
   end

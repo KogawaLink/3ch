@@ -55,7 +55,7 @@ h1 {
   text-decoration: none;
   font-weight: bold;
   color: #03A9F4;
-  font-size: 25px;
+  font-size: 23px;
 }
 .btn-cross:before, .btn-cross:after {
   content: '';
@@ -85,7 +85,7 @@ h1 {
 }
 
 .titletext {
-  width: 600px;
+  width: 100%;
   height: 100px;
   font-size: 20px;
   resize: none;
@@ -95,27 +95,25 @@ h1 {
   margin-top: 30px;
 }
 .overviews {
-  width: 600px;
+  width: 100%;
   height: 350px;
   resize: none;
 }
 
-.right {
-  margin-left: 920px;
-}
 .name {
   font-size: 30px;
   margin-top: 30px;
 }
 .sakuseisya {
-  width: 550px;
+  width: 100%;
+  margin-right: 8.3333333333%;
 }
 .pw {
   font-size: 30px;
-  margin-top: 110px;
+  margin-top: 30px;
 }
 .password {
-  width: 550px;
+  width: 100%;
 }
 .sakusei {
   width: 200px;
@@ -196,7 +194,6 @@ background-repeat:repeat-x;
   line-heigt: 1.2em;
   -webkit-transition: .100s;
   transition: .100s;
-  float: right;
 }
 .delete_btn:hover {
   border-bottom: none;
@@ -216,6 +213,11 @@ background-repeat:repeat-x;
 }
 .delete_mandatory {
   font-size: 20px;
+}
+
+.delete_btn_wrapper {
+  text-align: center;
+  margin: 1vw 0;
 }
 
 .top {
@@ -282,9 +284,15 @@ margin: 0;
   text-align: right;
   margin: 1vw 2vw 0 0;
 }
+
 .image-up {
-  margin: 0 0 1% 43%;
+  text-align: center;
+  margin: 1vw;
 }
+#post_image {
+  display: inline;
+}
+
 .producer {
   text-align: center;
 }
@@ -301,3 +309,7 @@ margin: 0;
 }
 
 
+img.sized {
+  width: 20%;
+  height: 20%;
+}
