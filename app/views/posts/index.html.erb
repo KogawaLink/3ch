@@ -5,7 +5,7 @@
     <div class="newthread_title"><%= @newthread.title %></div>
   </h1>
   <div class="continer">
-    <div class="row">
+    <div class="row reset-margin">
       <div class="kakomi-te1">
         <% @newthread_posts.each.with_index(@start) do |post, index| %>
           <div class="comment">
@@ -22,23 +22,31 @@
         <% end %>
       </div>
     </div>
+    <div class="row reset-margin">
+        <span class="paginate"><%= paginate @newthread_posts %></span>
+        <%= form_with(model: @post, url: newthread_posts_path(@newthread.id)) do |f| %>
+          <div class="row reset-margin">
+            <div class="col-xs-12"></div>
+              <div class="image-up">
+                <%= f.file_field :image %>
+              </div>
+            </div>
+            <div class="col-xs-12 col-lg-4 col-lg-offset-4">
+              <div class="commentsss">
+                <%= f.text_field :postname , :size=>"40" , :placeholder=>"投稿者" , class:'names' %>
+              </div>
+              <p></p>
+                <div class="commentss">
+                  <div class="center"><%= f.text_area :comment, :placeholder=>"コメント" , class:'comments' %></div>
+                  <div class="push-btn"><%= f.submit "送信" , class:'sousin' , id:'push' %></div>
+                </div>
+            </div>
+          </div>
+        <% end %>
+        <%= flash[:notice] %>
+        <div class="delete_btn_wrapper">
+          <br>
+          <%= link_to 'スレッドを削除' , {controller: 'newthreads', action: 'delete'} , class: :delete_btn %>
+        </div>
+    </div>
   </div>
-<span class="paginate"><%= paginate @newthread_posts %></span>
-<%= form_with(model: @post, url: newthread_posts_path(@newthread.id)) do |f| %>
-    <div class="image-up">
-      <%= f.file_field :image %>
-    </div>
-    <div class="commentsss">
-      <%= f.text_field :postname , :size=>"40" , :placeholder=>"投稿者" , class:'names' %>
-    </div>
-    <p></p>
-      <div class="commentss">
-        <div class="center"><%= f.text_area :comment, :placeholder=>"コメント" , class:'comments' %></div>
-      
-        <div class="push-btn"><%= f.submit "送信" , class:'sousin' , id:'push' %></div>
-      </div>
-<% end %>
-<%= flash[:notice] %>
-<div class="delete_btn_wrapper">
-  <%= link_to 'スレッドを削除' , {controller: 'newthreads', action: 'delete'} , class: :delete_btn %>
-</div>

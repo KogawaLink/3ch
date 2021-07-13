@@ -157,6 +157,10 @@ background-repeat:repeat-x;
   text-align: center;
 }
 
+.comment {
+  font-size: 17px;
+}
+
 .commentsss {
   text-align: center;
 }
@@ -164,7 +168,7 @@ background-repeat:repeat-x;
   text-align: center;
 }
 .comments {
-  width: 30%;
+  width: 100%;
   height: 250px;
   resize: none;
   text-align: center;
@@ -212,7 +216,7 @@ background-repeat:repeat-x;
 
 .delete_btn_wrapper {
   text-align: center;
-  margin: 1vw 0;
+  margin: 1vw 0 60px 0;
 }
 
 .top {
@@ -309,6 +313,11 @@ img.sized {
   height: 20%;
 }
 
-input[type="text"] {
-  width: 40%;
+
+.reset-margin {
+  margin: 0px;
+}
+
+.keyword {
+  width: 80%;
 }

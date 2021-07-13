@@ -5,14 +5,18 @@
       <%= image_tag 'web_logo.png', class: 'logo', alt: '３ちゃんねる' %>
     <% end %>
   </div>
-  <div class="kensaku">
-    <%= form_with url: newthreads_search_path, local: true, method: :get do |f| %>
-      <%= f.text_field :keyword ,:size=>"80" ,:placeholder=>"スレタイ検索"%>
-      <%= f.submit :'検索' ,:title => nil %>
-    <% end %>
-    <div>未入力で検索をかけると過去記事一覧が出ます</div>
-  </div>
 <div class="container-fluid">
+  <div class="row">
+    <div class="col-xs-12 col-lg-6 col-lg-offset-3">
+      <div class="kensaku">
+        <%= form_with url: newthreads_search_path, local: true, method: :get do |f| %>
+          <%= f.text_field :keyword ,:placeholder=>"スレタイ検索" , class: "keyword" %>
+          <%= f.submit :'検索' ,:title => nil %>
+        <% end %>
+        <div>未入力で検索をかけると過去記事一覧が出ます</div>
+      </div>
+    </div>
+  </div>
   <div class="row">
       <div class="col-xs-12 col-lg-5 col-xs-offset-0 col-lg-offset-2">
         <div class="flame">
