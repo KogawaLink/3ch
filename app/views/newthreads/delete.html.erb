@@ -5,8 +5,14 @@
     <%= @thread.title %>
   </div>
 </h1>
-<%= form_with(model: @thread, method: :delete, local: true, class:'f_delete') do |f| %>
-  <div class="delete_mandatory">スレッド作成時のパスワードを入力してください</div>
-  <%= f.text_field :again_password , :size=>"80" ,class:'again_password' %>
-  <%= f.submit "削除" , class:'sousin' %>
-<% end %>
+<div class="container-fluid">
+  <div class="row reset-margin">
+    <div class="col-xs-12 col-lg-4 col-lg-offset-4">
+      <%= form_with(model: @thread, method: :delete, local: true, class:'f_delete') do |f| %>
+        <div class="delete_mandatory">スレッド作成時のパスワードを入力してください</div>
+        <%= f.text_field :again_password ,class:'again_password' %>
+        <%= f.submit "削除" , class:'sousin' %>
+      <% end %>
+    </div>
+  </div>
+</div>

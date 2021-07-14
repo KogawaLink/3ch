@@ -46,6 +46,10 @@ h1 {
   margin-right: auto;
 }
 
+.top-margin {
+  margin-top: 30px;
+}
+
 .btn-cross {
   display: inline-block;
   position: relative;
@@ -263,9 +267,6 @@ margin: 0;
 .result p {
   margin : 2% 0;
 }
-.over_views {
-  font-size: 20px;
-}
 
 .none {
   font-size: 50px;
@@ -319,5 +320,9 @@ img.sized {
 }
 
 .keyword {
+  width: 80%;
+}
+
+.again_password {
   width: 80%;
 }

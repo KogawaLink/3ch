@@ -1,17 +1,25 @@
-<h1>検索結果</h1>
-  <div class="kensaku">
-    <%= form_with url: newthreads_search_path, local: true, method: :get do |f| %>  <%# 検索フォーム %>
-      <%= f.text_field :keyword ,:size=>"80" ,:placeholder=>"スレタイ検索" %>
-      <%= f.submit :'検索' ,:title => nil %>
-    <% end %>
+<div class="container-fluid">
+  <div class="row reset-margin">
+    <div class="col-xs-12 col-lg-6 col-lg-offset-3">
+      <h1>検索結果</h1>
+        <div class="kensaku">
+          <div class="top-margin">
+            <%= form_with url: newthreads_search_path, local: true, method: :get do |f| %>  <%# 検索フォーム %>
+              <%= f.text_field :keyword ,:placeholder=>"スレタイ検索" , class: "keyword" %>
+              <%= f.submit :'検索' ,:title => nil %>
+            <% end %>
+          </div>
+        </div>
+    </div>
   </div>
-<% if @threads.blank? %>  <%# 該当するkeywordを持っているthreadsがない場合 %>
-  <div class="none">検索結果がありません。</div>
-<% end %>
-<div class="result">
-  <% @threads.each do |thread| %>  <%# 検索結果があった場合、該当するtitleと紐づく最初のコメントを表示 %>
-    <p class="thread_result"><%= link_to "#{thread.title.truncate(25)}", posts_path(thread.id) %> <%# truncateが表示文字数 %>
-    <span class="over_views"><%= thread.posts[0].comment.truncate(40) %></span>
-    </p>
+  <% if @threads.blank? %>  <%# 該当するkeywordを持っているthreadsがない場合 %>
+    <div class="none">検索結果がありません。</div>
   <% end %>
+    <div class="result">
+      <% @threads.each do |thread| %>  <%# 検索結果があった場合、該当するtitleと紐づく最初のコメントを表示 %>
+        <p class="thread_result"><%= link_to "#{thread.title.truncate(25)}", posts_path(thread.id) %> <%# truncateが表示文字数 %>
+        <span class="over_views"><%= thread.posts[0].comment.truncate(40) %></span>
+        </p>
+      <% end %>
+    </div>
 </div>
