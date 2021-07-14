@@ -1,9 +1,18 @@
 # ３ちゃんねる
 
-![webロゴ完成](https://user-images.githubusercontent.com/74532874/125621032-bcb2e41a-85cf-48be-9bad-172a3e02239d.jpg)
-https://true-eds-16020.herokuapp.com/
-
-## このアプリでできること
+![webロゴ完成](https://user-images.githubusercontent.com/74532874/125621032-bcb2e41a-85cf-48be-9bad-172a3e02239d.jpg)<br>
+https://true-eds-16020.herokuapp.com/<br>
+<br>
+<br>
+**※herokuでのレンタルサーバーで無料枠なので、３０分ほどユーザーからのアクセスがない場合スリープモードに入ってしまいますので、接続時に１５～２０秒ほど時間がかかってしまう場合があります。**<br>
+<br>
+<br>
+### サイト説明
+掲示板サイトに運営側からの通知を加えたサイトです。<br>
+狙っているユーザー層は後で追記しますが、その層を獲得するために既存の掲示板サイトに通知機能を加えました。<br>
+<br>
+<br>
+### このアプリでできること
 * スレッド作成
 * スレッド削除
 * コメント書き込み
