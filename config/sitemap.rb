@@ -22,7 +22,4 @@ SitemapGenerator::Sitemap.create do
   add newthreads_path
   add new_newthread_path
 
-  Article.where(status: 1).find_each do |article|
-    add for_customer_article_path(article), priority: 0.7, lastmod: article.updated_at, changefreq: 'daily'
-  end
 end
