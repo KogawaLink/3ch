@@ -116,6 +116,7 @@ h1 {
 .pw {
   font-size: 30px;
   margin-top: 30px;
+  word-break: break-all;
 }
 .password {
   width: 100%;
@@ -325,4 +326,14 @@ img.sized {
 
 .again_password {
   width: 80%;
+}
+
+.word-break {
+  word-break: break-all;
+}
+
+.box-size {
+  box-sizing: border-box;
+  max-width: 100%;
+  overflow-x: hidden;
 }

@@ -16,4 +16,5 @@ Rails.application.routes.draw do
   resources :newthreads do
     resources :posts, only: [:create]
   end
+  
 end
