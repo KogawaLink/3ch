@@ -17,7 +17,6 @@ SitemapGenerator::Sitemap.create do
   add newthreads_search_path
   add tops_author_path
   add concerns_search_path
-  add newthread_posts_path
   add newthreads_path
   add new_newthread_path
 
