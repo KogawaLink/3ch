@@ -12,12 +12,13 @@ SitemapGenerator::Sitemap.create do
   add searchs_new_path
   add tops_index_path
   add root_path
-  add posts_path
   add newthread_delete_path
   add newthreads_search_path
   add tops_author_path
   add concerns_search_path
   add newthreads_path
   add new_newthread_path
+  add '/newthreads/:id'
+  add '/newthread/:id/posts'
 
 end
