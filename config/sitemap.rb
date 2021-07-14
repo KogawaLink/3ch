@@ -9,7 +9,6 @@ SitemapGenerator::Sitemap.adapter = SitemapGenerator::AwsSdkAdapter.new(
 )
 
 SitemapGenerator::Sitemap.create do
-  add for_customer_articles_path, priority: 0.7, changefreq: 'daily'
   add searchs_new_path
   add tops_index_path
   add root_path
