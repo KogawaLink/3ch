@@ -17,5 +17,5 @@ Rails.application.routes.draw do
     resources :posts, only: [:create]
   end
   
-  get 'sitemap', to: redirect('https://s3-ap-northeast-1.amazonaws.com/3ch/sitemaps/sitemap.xml.gz')
+  get '/sitemap', to: redirect("https://s3-ap-northeast-1.amazonaws.com/#{ENV['S3_BUCKET_NAME']}/sitemaps/sitemap.xml.gz")
 end
