@@ -10,6 +10,17 @@ SitemapGenerator::Sitemap.adapter = SitemapGenerator::AwsSdkAdapter.new(
 
 SitemapGenerator::Sitemap.create do
   add for_customer_articles_path, priority: 0.7, changefreq: 'daily'
+  add searchs_new_path
+  add tops_index_path
+  add root_path
+  add posts_path
+  add newthread_delete_path
+  add newthreads_search_path
+  add tops_author_path
+  add concerns_search_path
+  add newthread_posts_path
+  add newthreads_path
+  add new_newthread_path
 
   Article.where(status: 1).find_each do |article|
     add for_customer_article_path(article), priority: 0.7, lastmod: article.updated_at, changefreq: 'daily'
