@@ -261,7 +261,6 @@ margin: 0;
 }
 
 .result {
-  margin: 4% 0 0 10%;
   font-family: 'crayon_1-1';
   font-size: 40px;
 }
@@ -336,4 +335,8 @@ img.sized {
   box-sizing: border-box;
   max-width: 100%;
   overflow-x: hidden;
+}
+
+.thread_result {
+  margin: 3vw 0;
 }

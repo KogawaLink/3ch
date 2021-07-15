@@ -18,11 +18,13 @@
     <div class="result">
       <% @threads.each do |thread| %>  <%# 検索結果があった場合、該当するtitleと紐づく最初のコメントを表示 %>
         <div class="row reset-margin">
-          <div class="col-xs-12 col-lg-5 col-lg-offset-1">
-            <p class="thread_result"><%= link_to "#{thread.title.truncate(25)}", posts_path(thread.id) %></p> <%# truncateが表示文字数 %>
-          </div>
-          <div class="col-xs-12 col-lg-5 col-lg-offset-1">
-            <span class="over_views"><%= thread.posts[0].comment.truncate(40) %></span>
+          <div class="indention">
+            <div class="col-xs-12 col-lg-5 col-lg-offset-1">
+              <p class="thread_result"><%= link_to "#{thread.title.truncate(25)}", posts_path(thread.id) %></p> <%# truncateが表示文字数 %>
+            </div>
+            <div class="col-xs-12 col-lg-5 col-lg-offset-1">
+              <span class="over_views"><%= thread.posts[0].comment.truncate(40) %></span>
+            </div>
           </div>
         </div>  
       <% end %>
