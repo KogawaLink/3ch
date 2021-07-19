@@ -62,6 +62,9 @@
 * 画像保存先ストレージ : S3
 
 <br>
-### テーブル構造
+<br>
 
+### テーブル構造  
+<br>
+<br>
 ![3ch テーブル](https://user-images.githubusercontent.com/74532874/126113526-f269a412-9d54-4652-8242-8af0ecae1769.png)<br>
